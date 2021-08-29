@@ -1,0 +1,53 @@
+<div class="d-flex flex-wrap overflow-hidden">
+    <div *ngFor="let notice of loginService.noticeLists" class="p-2 col-sm-4">
+        <div class="card px-4">
+            <div class="card-body">
+                <h5 class="card-title">{{notice.title}}</h5>
+                <span>{{notice.uploadDate}}</span>
+                <hr>
+                <p class="card-text">{{notice.description}}</p>
+                <a class="btn btn-primary mx-4" type="button" *ngIf="!studentLoginFlag" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="setId(notice.id)">Edit</a>
+                <a class="btn btn-danger mx-4" *ngIf="!studentLoginFlag" (click)="onNoticeDelete(notice)">Delete</a>
+            </div>
+        </div>
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Edit Notice</h5>
+          <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Save Changes"></button>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-10 offset-md-1">
+            
+                <form [formGroup]="formgroup" class="row g-3" (ngSubmit)="onEditClick()">
+          
+                    <div class="col-12">
+                        <label>Title</label>
+                        <input type="text"  class="form-control" placeholder="title" formControlName="title" required>
+                    </div>
+                  
+                    <div class="col-12">
+                        <label>UploadDate</label>
+                        <input type="date"  class="form-control" placeholder="uploadDate" formControlName="uploadDate" required>
+                    </div>
+                    <div class="col-12">
+                      <label>Description</label>
+                      <textarea class="form-control" placeholder="description" formControlName="description" required></textarea>
+                  </div>
+                    
+                  <div class="col-12" data-dismiss="modal">
+                    <button type="submit" class="btn btn-primary float-end" data-bs-dismiss="modal">Save Changes</button>
+                </div>
+                </form>
+               
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

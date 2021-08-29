@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="login-form bg-light mt-4 p-4">
+                <form class="row g-3" [formGroup]="formGroup" (ngSubmit)="signUpSubmit()">
+                    <h4>Not a Registered Student ?</h4>
+                    <div class="col-12">
+                        <label>Username</label>
+                        <input type="text"  class="form-control" placeholder="Username" formControlName="username">
+                    </div>
+                    <div class="col-12">
+                        <label>Password</label>
+                        <input type="password"  class="form-control" placeholder="Password" formControlName="password">
+                    </div>
+                    
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-dark float-end">Sign Up</button>
+                    </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>

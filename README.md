@@ -1,29 +1,27 @@
-# NoticeBoardApp
+# StudentNoticeApp
 
-Steps for Json Server Setup
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
-Step:1 ->  Run the Below Command to install json server on your machine
-		npm install -g json-server 
-		
-		This will generate one db.json file which will be used for CRUD Operations.
-		I have attached my db.json file replace your file with mine db.json as my db.json has all 		the data that is used in this application
+## Development server
 
-Step:2 : -> To run the Server use the below command
-		   json-server --watch db.json
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Code scaffolding
 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Steps To Run The Angular App
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-Step 1: -> Download the project with the GitHub link provided. 
-		This will not have node modules but  that’s not an issue as all the package details are 		already available in package.json so it will download all the dependencies for you.
+## Running unit tests
 
-Step:2 -> I have used bootStrap 5 here for all the Styling so kindly check the bootstrap after 		setting up the project. 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-		Note: I have not used a single line of css other than bootstrap in the project.
+## Running end-to-end tests
 
-Step:3 -> This project uses angular routing, reactive forms,CRUD operations and Route guard.
-		
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
 
-I have also shared one google Drive link for Demo video of the project,Kindly check that.
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

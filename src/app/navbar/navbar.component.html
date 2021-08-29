@@ -1,0 +1,68 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">NoticeBoard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse w-100" id="navbarNavDropdown">
+      <ul *ngIf="loginService.adminLoggedIn" class="navbar-nav" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <li class="nav-item active">
+          <a class="nav-link">Add Notice</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav ms-auto pe-3">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            LOGIN
+          </a>
+          <div  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+            <a class="dropdown-item" href="#" routerLink="/admin" routerLinkActive="active" *ngIf="!loginService.studentRegistered && !loginService.adminLoggedIn">SignIn as Admin</a>
+            <a class="dropdown-item" href="#" routerLink="/student" routerLinkActive="active" *ngIf="!loginService.studentRegistered && !loginService.adminLoggedIn">SignIn as Student</a>
+            <a class="dropdown-item" href="#" routerLink="/signup" routerLinkActive="active" *ngIf="!loginService.studentRegistered && !loginService.adminLoggedIn">Sign Up</a>
+            <a class="dropdown-item" href="#" routerLink="/student" (click)="loginService.updateLoginFlag()" *ngIf="loginService.studentRegistered || loginService.adminLoggedIn">Sign Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Notice</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-10 offset-md-1">
+          
+              <form [formGroup]="formgroup" class="row g-3" (ngSubmit)="onAddClick()">
+        
+                  <div class="col-12">
+                      <label>Title</label>
+                      <input type="text"  class="form-control" placeholder="title" formControlName="title" required>
+                  </div>
+                
+                  <div class="col-12">
+                      <label>UploadDate</label>
+                      <input type="date"  class="form-control" placeholder="uploadDate" formControlName="uploadDate" required>
+                  </div>
+                  <div class="col-12">
+                    <label>Description</label>
+                    <textarea class="form-control" placeholder="description" formControlName="description" required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary float-end" data-bs-dismiss="modal">Add</button>
+              </div>
+              </form>
+             
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
